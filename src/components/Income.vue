@@ -1,163 +1,195 @@
 <script setup lang="ts">
-    //TODO: make a layout for select
-    //
+    import {ref} from 'vue'
 
-    import { ref} from 'vue'
-    import SelectRecurring from './SelectRecurring.vue'
-    let isPayClicked = ref(false)
-    let isOtherIncomeClicked = ref(false)
-    let isAddIncomeClicked = ref(false)
+    const isPayClicked = ref(false)
+    const isOtherClicked = ref(false)
+    const isAddClicked = ref(false)
 
-    const iSalary = ref(0)
-    const iBusiness = ref(0)
-    const iAdditional = ref(0)
-    const fSalary = ref(0)
-    const fBusiness = ref(0)
-    const fAdditional = ref(0)
-    
-    const payRecurrent = ref('perDay')
-    const businessRecurrent = ref('perDay')
-    const addRecurrent = ref('perDay')
-
-
-    const customAdd = ref('')
-
+    const salarySelect = ref('perMonth')
+    const businessSelect = ref ('perMonth')
+    const savingSelect = ref('perMonth')
+    const boardSelect = ref('perMonth')
+    const custom1Select = ref('perMonth')
+    const custom2Select = ref ('perMonth')
     function handlePay(){
-        isPayClicked.value = !isPayClicked.value
+        isPayClicked.value= !isPayClicked.value;
     }
-    function handleOtherIncome(){
-        isOtherIncomeClicked.value = !isOtherIncomeClicked.value
+    function handleOther(){
+        isOtherClicked.value = !isOtherClicked.value
     }
-    function handleAddIncome(){
-        isAddIncomeClicked.value = !isAddIncomeClicked.value
+    function handleAdd(){
+        isAddClicked.value = !isAddClicked.value
     }
-    function calculateTotalIncome(pay, other, add){
-        if(payRecurrent.value === 'perDay'){
-            fSalary.value = pay
-        }
-    }
-    
-  
 </script>
+
 <template>
-    <SelectRecurring />
-     <p>{{ selectedSalary }}</p>
-</template>
-<template>
-    <div class="incomeContainer">
-        <div class="optionsContainer">
-            <div class="pay">
-                <div @click="handlePay">Pay</div>
-                    <div v-if="isPayClicked">
-                        <div class="salary">Salary
-                            <input type="number" placeholder="amount" v-model="iSalary">
-                            <select name="select" v-model="payRecurrent">
-                                <option value="perDay">per day</option>
-                                <option value="perWeek">per week</option>
-                                <option value="perMonth">per month</option>
-                                <option value="perYear">per year</option>
-                            </select>
-                        </div>
-                    </div>
+    <div class="container">
+        <hr>
+        <div class="choices" @click="handlePay">
+            <h3>Pay</h3>
+        </div>
+        <div class="tag" v-if="isPayClicked">
+            <div class="texts">
+                <h4>Salary(after tax)</h4>
+                <h4>Self-employment</h4>
             </div>
-            <div class="otherIncome">
-                <div @click="handleOtherIncome">Other income</div>
-                    <div v-if="isOtherIncomeClicked">
-                        <div class="business">Business
-                            <input type="number" placeholder="amount" v-model="iBusiness">
-                            <select name="select" @change="handleOtherSelect($event)">
-                                <option value="perDay">per day</option>
-                                <option value="perWeek">per week</option>
-                                <option value="perMonth">per month</option>
-                                <option value="perYear">per year</option>
-                            </select>
-                        </div>
-                    </div>
+            <div class="inputs">
+                <div class="option">
+                    <input type="number" placeholder="0.00">
+                    <select v-model="salarySelect">
+                        <option value="perDay">per day</option>
+                        <option value="perWeek">per week</option>
+                        <option value="perMonth">per month</option>
+                        <option value="perYear">per year</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <input type="number" placeholder="0.00">
+                    <select v-model="businessSelect">
+                        <option value="perDay">per day</option>
+                        <option value="perWeek">per week</option>
+                        <option value="perMonth">per month</option>
+                        <option value="perYear">per year</option>
+                    </select>
+                </div>
+            </div>  
+        </div>
+        <hr>
+        <div class="choices" @click="handleOther"><h3>Other Income</h3></div>
+        <div class="tag" v-if="isOtherClicked">
+            <div class="texts">
+                <h4>Savings & Investments</h4>
+                <h4>Board & Rent</h4>
             </div>
-            <div class="addtionalIncome">
-                <div @click="handleAddIncome">Additional income</div>
-                    <div v-if="isAddIncomeClicked">
-                        <div class="custom">
-                            <input type="text" v-model="customAdd">
-                            <input type="number" placeholder="amount" v-model="iAdditional">
-                            <select name="select" @change="handleAddSelect($event)">
-                                    <option value="perDay">per day</option>
-                                    <option value="perWeek">per week</option>
-                                    <option value="perMonth">per month</option>
-                                    <option value="perYear">per year</option>
-                            </select>
-                        </div>
-                    </div>
+            <div class="inputs">
+                <div class="option">
+                    <input type="number" placeholder="0.00">
+                    <select v-model="savingSelect">
+                        <option value="perDay">per day</option>
+                        <option value="perWeek">per week</option>
+                        <option value="perMonth">per month</option>
+                        <option value="perYear">per year</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <input type="number" placeholder="0.00">
+                    <select v-model="boardSelect">
+                        <option value="perDay">per day</option>
+                        <option value="perWeek">per week</option>
+                        <option value="perMonth">per month</option>
+                        <option value="perYear">per year</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="totalIncome">
-            <div>Total Income</div>
-            <p>{{ fSalary + fBusiness + fAdditional }}</p>
-            <p>per month</p>
+        <hr>
+        <div class="choices" @click="handleAdd"><h3>Additional Income</h3></div>
+        <div class="tag" v-if="isAddClicked">
+            <div class="texts">
+                <input type="text" placeholder="Name additional income">
+                <input type="text" placeholder="Name additional income">
+            </div>
+            <div class="inputs">
+                <div class="option">
+                    <input type="number" placeholder="0.00">
+                    <select v-model="custom1Select">
+                        <option value="perDay">per day</option>
+                        <option value="perWeek">per week</option>
+                        <option value="perMonth">per month</option>
+                        <option value="perYear">per year</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <input type="number" placeholder="0.00">
+                    <select v-model="custom2Select">
+                        <option value="perDay">per day</option>
+                        <option value="perWeek">per week</option>
+                        <option value="perMonth">per month</option>
+                        <option value="perYear">per year</option>
+                    </select>
+                </div>
+            </div>
+           
         </div>
+        <hr>
     </div>
 </template>
 
 <style scoped>
-.incomeContainer{
-    width:  50vw;
-    height: 50vh;
+.container{
+    margin-top: 15px;
+    height: 450px;
+    background-color: #303030;
+    padding: 25px;
+}
+.choices{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+h3{
+    color: #8255E4;
+}
+h4{
+    color: #fff;
+    font-weight: lighter;
+}
+hr{
+    width: 100%;
+    border: 1px solid white;
+}
+.tag{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25px;
+    box-sizing: border-box;
+}
+.inputs{
+    width: 40%;
     display: flex;
     flex-direction: column;
-    align-items: left;
-    padding: 10px;
-    border-radius: 10px;
+    justify-content: center;
+    gap: 10px;
+}
+.texts{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.texts>input{
+    width: 170px;
+    padding: 5px;
+    color: #fff;
+    background: #3F3E41;
+    border-radius: 5px;
     border: none;
-    background-color: #EFF7B1;
 }
-.optionsContainer{
-    width: 100%;
-    height: 100%;
+.option{
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 10px;
-    box-sizing: border-box;
+    justify-content: end;
+    gap: 5px;
 }
-.totalIncome{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
+.option>input{
+    width: 60px;
+    padding: 5px;
+    color: #fff;
+    background: #3F3E41;
+    border-radius: 5px;
+    border: none;
 }
-.salary{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    box-sizing: border-box;
+.option>select{
+    width: 120px;
+    padding: 5px;
+    color: #fff;
+    background: #3F3E41;
+    border: none;
+    border-radius: 5px;
 }
-.business{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    box-sizing: border-box;
-}
-.custom{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    box-sizing: border-box;
-}
-input{
-    width: 70px;
-    padding-left: 3px;    
-}
-select{
-    width: 70px;
-}
+
 </style>
