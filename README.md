@@ -19,155 +19,159 @@ Components
 
     - [x] Additional items
         [x] customize income name
-- [] Household Bills
-    -  Mortgage & Rent
-        [] Mortgage payment
-        [] Rent 
+- [x] Household Bills
+    -  [x] Mortgage & Rent
+        [x] Mortgage payment
+        [x] Rent 
     
-    -  Utilities
-        [] Gas
-        [] Electricity
-        [] Water
-        [] Mobile phones
-        [] Internet /Broadbands
-        [] Satelite or digital TV
-        [] Home maintenance
+    -  [x] Utilities
+        [x] Gas
+        [x] Electricity
+        [x] Water
+        [x] Mobile phones
+        [x] Internet /Broadbands
+        [x] Satelite or digital TV
     
-    - Additonal items
-        [] customize bills
+    -  [x] Additonal items
+        [x] customize bills
 
-- [] Living Costs
-    - Food & Drink
-        [] Grocery Shopping
-        [] Takeaways
+- [x] Living Costs
+    - [x] Food & Drink
+        [x] Grocery Shopping
+        [x] Takeaways
+    - [x] Work
+        [x] Lunches & snacks
+        [x] Takeaway coffees etc.
+        [x] Union / professional fees
+
+    - [x] Clothes & shoes
+        [x] Children's clothes
+        [x] School uniform
+        [x] Shoes
+        [x] Work clothes
+        [x] New clothes for you
+        [x] Laundry and dry cleaning
+    
+    - [x] Health & beauty
+        [x] Hairdressing
+        [x] Beauty treatments
+        [x] Toiletries
+        [x] Eye care
+        [x] Dental
+        [x] Prescriptions & medicines
+
+    - [x] Additional items
+        [x] customize bills
+
+- [x] Finance & Insurance
+    - [x] Insurance
+        [x] Life insurance
+        [x] Income protection insurance
+        [x] Critical illness insurance
+        [x] Payment protection insurance
+        [x] Credit Card insurance
+        [x] Health insurance
+        [x] Dental insurance
+
+    - [x] Banking
+        [x] Overdraft charges and interest
+        [x] Bank account fees
+        [x] Penalties
+
+    - [x] Loans & credit
+        [x] Loan repayments
+        [x] Student loan repayments
+        [x] Credit card repayments
         
-    - Work
-        [] Lunches & snacks
-        [] Takeaway coffees etc.
-        [] Union / professional fees
-
-    -Clothes & shoes
-        [] Children's clothes
-        [] School uniform
-        [] Shoes
-        [] Work clothes
-        [] New clothes for you
-        [] Laundry and dry cleaning
-    
-    - Health & beauty
-        [] Hairdressing
-        [] Beauty treatments
-        [] Toiletries
-        [] Eye care
-        [] Dental
-        [] Prescriptions & medicines
-
-    - Additional items
-        [] customize bills
-
-- [] Finance & Insurance
-    - Insurance
-        [] Life insurance
-        [] Income protection insurance
-        [] Critical illness insurance
-        [] Payment protection insurance
-        [] Credit Card insurance
-        [] Health insurance
-        [] Dental insurance
-
-    - Banking
-        [] Overdraft charges and interest
-        [] Bank account fees
-        [] Penalties
-
-    - Loans & credit
-        [] Loan repayments
-        [] Studnt load repayments
-        [] Credit card repayments
+    - [x] Savings & investments
+        [x] Regular saving
+        [x] Lump sum saving
+        [x] Buying shares & other investments
         
-    - Savings & investments
-        [] Regular saving
-        [] Lump sum saving
-        [] Buying shares & other investments
-        
-    - Future plans
-        [] Long term care plan
-        [] Funeral plan
+    - [x] Future plans
+        [x] Long term care plan
+        [x] Funeral plan
 
-    - Addtional items
-        [] Customize items
+    - [x] Addtional items
+        [x] Customize items
 
-- [] Family & Friends
-    - Children
-        [] Childcare
-        [] Nappies and baby items
-        [] Acitivities & Clubs
-        [] Toys & treats
-        [] Pocket money
-        [] Babysitting
-        [] Maintenance or child support
+- [x] Family & Friends
+    - [x] Children
+        [x] Childcare
+        [x] Nappies and baby items
+        [x] Acitivities & Clubs
+        [x] Toys & treats
+        [x] Pocket money
+        [x] Babysitting
+        [x] Maintenance or child support
 
-    - School
-        [] School fees/tuitions
-        [] School trips
-        [] School meals
-        [] After-school clubs
+    - [x] School
+        [x] School fees/tuitions
+        [x] School trips
+        [x] School meals
+        [x] After-school clubs
 
-    - Support for student children
-        [] Support for student children
+    - [x] Support for student children
+        [x] Support for student children
 
-    - Pets
-        [] Food
-        [] Vet bills
+    - [x] Pets
+        [x] Food
+        [x] Vet bills
 
-    - Loan repayment to family/friend
-        [] Loan repayment to family/friend
+    - [x] Loan repayment to family/friend
+        [x] Loan repayment to family/friend
 
-    - Additional items
-        [] Customize item
+    - [x] Additional items
+        [x] Customize item
 
-- [] Travel
-    - Car costs
-        [] Petrol/diesel
-        [] Car insurance
-        [] Car finance or loan repayment
-        [] Loan insurance
-        [] Maintenance & reoairs
-        [] Parking tolls
+- [x] Travel
+    - [x] Car costs
+        [x] Petrol/diesel
+        [x] Car insurance
+        [x] Car finance or loan repayment
+        [x] Loan insurance
+        [x] Maintenance & reoairs
+        [x] Parking tolls
 
-    - Public transport
-        [] Bus, Jeep fees
-        [] Trains
-        [] Taxis
-        [] Air travel
+    - [x] Public transport
+        [x] Bus, Jeep fees
+        [x] Trains
+        [x] Taxis
+        [x] Air travel
 
-    - Addtional items
-        [] Customize item
+    - [x] Addtional items
+        [x] Customize item
 
-- [] Leaisure 
-    - Entertainment
-        [] Cinema & theatre trips
-        [] Days out
-        [] Books, music, films, games etc.
-        [] Hobbies
-        [] Eating out
-        [] Going out for drinks
-        [] Sport & gym
-        [] Lottery & gambling
+- [x] Leisure 
+    - [x] Entertainment
+        [x] Cinema & theatre trips
+        [x] Days out
+        [x] Books, music, films, games etc.
+        [x] Hobbies
+        [x] Eating out
+        [x] Going out for drinks
+        [x] Sport & gym
+        [x] Lottery & gambling
     
-    - One-offs
-        [] Birthdays
-        [] Christmas
-        [] Other festivals & celebrations
-        [] Weddings
+    - [x] One-offs
+        [x] Birthdays
+        [x] Christmas
+        [x] Other festivals & celebrations
+        [x] Weddings
 
-    - Holidays
-        [] Holidays
-        [] Travel insurance
-        [] Spending money
+    - [x] Holidays
+        [x] Holidays
+        [x] Travel insurance
+        [x] Spending money
 
-    - Additional items
-        [] Customize item
+    - [x] Additional items
+        [x] Customize item
+
+
+- [] show total calculation in each component
+- [] continue/finish button in each component
+
+
 
 ** after that it will connect to the dashboard along with the graph and summary report **
 -------------------- Form ---------------------

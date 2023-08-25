@@ -5,109 +5,77 @@
     const isOtherClicked = ref(false)
     const isAddClicked = ref(false)
 
-    const salarySelect = ref('perMonth')
-    const businessSelect = ref ('perMonth')
-    const savingSelect = ref('perMonth')
-    const boardSelect = ref('perMonth')
-    const custom1Select = ref('perMonth')
-    const custom2Select = ref ('perMonth')
-    function handlePay(){
-        isPayClicked.value= !isPayClicked.value;
+    const payOptions = [
+        { label: 'Salary(after tax)', select: 'salarySelect' },
+        { label: 'Self-employment', select: 'businessSelect' },
+    ]
+    
+    const otherOptions = [
+        { label: 'Savings & Investments', select: 'savingSelect' },
+        { label: 'Board & Rent', select: 'boardSelect' },
+    ]
+    
+    const additionalOptions = [
+        { label: 'Additional Income', select: 'custom1Select' },
+        { label: 'Additional Income', select: 'custom2Select' },
+    ]
+    const options = [
+        { value: 'perDay', text: 'per day'},
+        { value: 'perWeek', text: 'per week'},
+        { value: 'perMonth', text: 'per month'},
+        { value: 'perYear', text: 'per year'}
+    ]
+    function toggle(prop: any){
+        eval(`${prop}.value = !${prop}.value`)
     }
-    function handleOther(){
-        isOtherClicked.value = !isOtherClicked.value
-    }
-    function handleAdd(){
-        isAddClicked.value = !isAddClicked.value
-    }
+
 </script>
 
 <template>
     <div class="container">
         <hr>
-        <div class="choices" @click="handlePay">
-            <h3>Pay</h3>
-        </div>
+        <div class="choices" @click="toggle('isPayClicked')"><h3>Pay</h3></div>
         <div class="tag" v-if="isPayClicked">
             <div class="texts">
-                <h4>Salary(after tax)</h4>
-                <h4>Self-employment</h4>
+                <h4 v-for='option in payOptions'>{{ option.label }}</h4>
             </div>
             <div class="inputs">
-                <div class="option">
+                <div class="option" v-for="option in payOptions">
                     <input type="number" placeholder="0.00">
-                    <select v-model="salarySelect">
-                        <option value="perDay">per day</option>
-                        <option value="perWeek">per week</option>
-                        <option value="perMonth">per month</option>
-                        <option value="perYear">per year</option>
+                    <select v-model="option.select">
+                        <option v-for="option in options" :value="option.value">{{option.text}}</option> 
                     </select>
-                </div>
-                <div class="option">
-                    <input type="number" placeholder="0.00">
-                    <select v-model="businessSelect">
-                        <option value="perDay">per day</option>
-                        <option value="perWeek">per week</option>
-                        <option value="perMonth">per month</option>
-                        <option value="perYear">per year</option>
-                    </select>
-                </div>
+                </div>  
             </div>  
         </div>
         <hr>
-        <div class="choices" @click="handleOther"><h3>Other Income</h3></div>
+        <div class="choices"  @click="toggle('isOtherClicked')"><h3>Other Income</h3></div>
         <div class="tag" v-if="isOtherClicked">
             <div class="texts">
-                <h4>Savings & Investments</h4>
-                <h4>Board & Rent</h4>
+                <h4 v-for='option in otherOptions'>{{ option.label }}</h4>
             </div>
             <div class="inputs">
-                <div class="option">
+                <div class="option" v-for="option in otherOptions">
                     <input type="number" placeholder="0.00">
-                    <select v-model="savingSelect">
-                        <option value="perDay">per day</option>
-                        <option value="perWeek">per week</option>
-                        <option value="perMonth">per month</option>
-                        <option value="perYear">per year</option>
+                    <select v-model="option.select">
+                        <option v-for="option in options" :value="option.value">{{option.text}}</option>  
                     </select>
-                </div>
-                <div class="option">
-                    <input type="number" placeholder="0.00">
-                    <select v-model="boardSelect">
-                        <option value="perDay">per day</option>
-                        <option value="perWeek">per week</option>
-                        <option value="perMonth">per month</option>
-                        <option value="perYear">per year</option>
-                    </select>
-                </div>
+                </div> 
             </div>
         </div>
         <hr>
-        <div class="choices" @click="handleAdd"><h3>Additional Income</h3></div>
+        <div class="choices"  @click="toggle('isAddClicked')"><h3>Additional Income</h3></div>
         <div class="tag" v-if="isAddClicked">
             <div class="texts">
-                <input type="text" placeholder="Name additional income">
-                <input type="text" placeholder="Name additional income">
+                <input v-for='option in additionalOptions' type="text" :placeholder="option.label">
             </div>
             <div class="inputs">
-                <div class="option">
+                <div class="option" v-for="option in additionalOptions">
                     <input type="number" placeholder="0.00">
-                    <select v-model="custom1Select">
-                        <option value="perDay">per day</option>
-                        <option value="perWeek">per week</option>
-                        <option value="perMonth">per month</option>
-                        <option value="perYear">per year</option>
+                    <select v-model="option.select">
+                        <option v-for="option in options" :value="option.value">{{option.text}}</option>
                     </select>
-                </div>
-                <div class="option">
-                    <input type="number" placeholder="0.00">
-                    <select v-model="custom2Select">
-                        <option value="perDay">per day</option>
-                        <option value="perWeek">per week</option>
-                        <option value="perMonth">per month</option>
-                        <option value="perYear">per year</option>
-                    </select>
-                </div>
+                </div> 
             </div>
            
         </div>

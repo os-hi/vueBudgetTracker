@@ -3,6 +3,7 @@
     import Household from './Household.vue'
     import Living from './LivingCost.vue'
     import Finance from './Finance.vue'
+    import Family from './Family.vue'
     import Travel from './Travel.vue'
     import Liesure from './Liesure.vue'
     import {ref} from 'vue'
@@ -14,6 +15,7 @@
         Household,
         Living,
         Finance,
+        Family,
         Travel,
         Liesure
     }
