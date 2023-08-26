@@ -1,13 +1,16 @@
 <template>
     <div class="window">
         <div class="container">
-            <Multiform />
+            <Budget />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
     import Multiform from '../components/Multiform.vue';
+    import Category from '../components/Category.vue';
+    import Option from '../components/Option.vue';
+    import Budget from './Budget.vue';
 </script>
 
 <style scoped>

@@ -33,9 +33,10 @@
           {{ tab }}
       </button>
       </div>
-    <KeepAlive>
-        <component :is="tabs[currentTab]" class="tab"></component>
-    </KeepAlive>
+      <KeepAlive>
+          <component :is="tabs[currentTab]" class="tab"></component>
+      </KeepAlive>
+    
     </div>
 </template>
 <style scoped>
@@ -76,5 +77,18 @@
 }
 .tab {
   padding: 10px;
+}
+
+.next{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+}
+.next>button{
+  padding: 8px;
+  background-color: #8255E4;
+  color: white;
+  border-radius: 5px;
 }
 </style>
